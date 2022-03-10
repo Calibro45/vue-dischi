@@ -6,12 +6,12 @@
         </figure>
         
         <div class="album-title">
-            <p>Titolo Album</p>
+            <p>prova</p>
         </div>
 
         <div class="album-info">
-            <p>Artista</p>
-            <p>Anno Album</p>
+            <p>prova</p>
+            <p>prova</p>
         </div>
     </div>
 
@@ -21,6 +21,7 @@
 
 export default {
     name: 'albumCard',
+
 }
 
 </script>
