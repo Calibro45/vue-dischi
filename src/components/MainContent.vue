@@ -3,7 +3,7 @@
     <main id="album">
         <div class="container">
 
-            <albumCard />
+            <albumCard class="album-card"/>
 
         </div>
     </main>
@@ -32,6 +32,12 @@ export default {
 
     .container {
         padding: 70px 10px;
+        display: flex;
+        flex-wrap: wrap;
+
+        .album-card {
+            width: calc(100% / 5);
+        }
     }
 }
     

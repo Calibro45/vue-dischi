@@ -26,5 +26,37 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../assets/scss/variabili.scss";
+
+.album-card-wrap {
+    padding: 20px;
+    background-color: $colorsec;
+    text-align: center;
+
+    .album-logo {
+        margin-bottom: 10px;
+
+        img {
+            aspect-ratio: 1;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+    
+    .album-title {
+        color: #fff;
+        text-transform: uppercase;
+        padding: 10px 15px;
+        font-weight: 700;
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    .album-info {
+        font-size: 14px;
+        color: $colorText;
+        font-weight: 500;
+    }
+}
     
 </style>
