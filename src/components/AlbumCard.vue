@@ -2,16 +2,16 @@
 
     <div class="album-card-wrap">
         <figure class="album-logo">
-            <img src="https://www.onstageweb.com/wp-content/uploads/2018/09/bon-jovi-new-jersey.jpg" alt="">
+            <img :src="album.poster" alt="">
         </figure>
         
         <div class="album-title">
-            <p>prova</p>
+            <p>{{ album.author }}</p>
         </div>
 
         <div class="album-info">
-            <p>prova</p>
-            <p>prova</p>
+            <p>{{ album.title }}</p>
+            <p>{{ album.year }}</p>
         </div>
     </div>
 
@@ -22,6 +22,12 @@
 export default {
     name: 'albumCard',
 
+    props: {
+        album: {
+            type: Object,
+            require: true,
+        }
+    },
 }
 
 </script>
