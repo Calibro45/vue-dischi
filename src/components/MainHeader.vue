@@ -32,7 +32,6 @@ header {
 
         img {
             height: 100%;
-
         }
     }
 }

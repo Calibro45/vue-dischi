@@ -34,35 +34,26 @@ export default {
 
 <style lang="scss" scoped>
 @import "../assets/scss/variabili.scss";
+@import "../assets/scss/mixins.scss";
 
 .album-card-wrap {
-    padding: 20px;
-    background-color: $colorsec;
-    text-align: center;
+    @include albumCard;
 
     .album-logo {
         margin-bottom: 10px;
 
         img {
-            aspect-ratio: 1;
-            object-fit: cover;
-            object-position: center;
+            @include albumImg;
         }
     }
     
     .album-title {
         color: #fff;
-        text-transform: uppercase;
-        padding: 10px 15px;
-        font-weight: 700;
-        font-size: 18px;
-        margin-bottom: 20px;
+        @include albumCardTitle;
     }
 
     .album-info {
-        font-size: 14px;
-        color: $colorText;
-        font-weight: 500;
+        @include albumInfo;
     }
 }
     

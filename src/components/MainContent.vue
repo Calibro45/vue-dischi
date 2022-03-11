@@ -1,13 +1,19 @@
 <template>
 
     <main id="album">
-        <div class="container">
+        <section class="container">
 
-            <albumCard class="album-card"
-            v-for="(album, i) in albums" :key="i" 
-            :album="album"/>
+            <selectMenu />
 
-        </div>
+            <div class="album-grid">
+
+                <albumCard class="album-card"
+                v-for="(album, i) in albums" :key="i" 
+                :album="album"/>
+
+            </div>
+
+        </section>
     </main>
 
 </template>
@@ -15,12 +21,14 @@
 <script>
 
 import albumCard from '../components/AlbumCard.vue';
+import selectMenu from '../components/selectMenu.vue';
 import axios from 'axios';
 
 export default {
     name: 'mainContent',
     components: {
         albumCard,
+        selectMenu,
     },
 
     data() {
@@ -61,9 +69,12 @@ export default {
 
     .container {
         padding: 70px 10px;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px 40px;
+
+        .album-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px 40px;
+        }
 
         .album-card {
             width: calc(100% / 5 - 40px);

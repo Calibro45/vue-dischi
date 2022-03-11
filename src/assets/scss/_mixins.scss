@@ -2,3 +2,29 @@
     max-width: 1200px;
     margin: 0 auto;
 }
+
+@mixin albumCard {
+    padding: 20px;
+    background-color: $colorsec;
+    text-align: center;
+}
+
+@mixin albumCardTitle {
+    text-transform: uppercase;
+    padding: 10px 15px;
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+@mixin albumImg {
+    aspect-ratio: 1;
+    object-fit: cover;
+    object-position: center;
+}
+
+@mixin albumInfo {
+    font-size: 14px;
+    color: $colorText;
+    font-weight: 500;
+}
