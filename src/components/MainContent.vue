@@ -122,12 +122,11 @@ export default {
         .album-grid {
             display: flex;
             flex-wrap: wrap;
-            gap: 20px 40px;
+            gap: 20px 4%;
         }
 
         .album-card {
-            width: calc(100% / 5 - 40px);
-            flex-grow: 1;
+            width: calc(84% / 5);
         }
     }
 }
