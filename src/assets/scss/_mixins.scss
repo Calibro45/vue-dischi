@@ -33,7 +33,9 @@
 
 @mixin selectGenere {
     padding: 8px 10px;
-    width: 150px;
+    width: 200px;
     border: 2px solid $colorText;
     border-radius: 8px;
+    font-weight: 700;
+    font-size: 16px;
 }

@@ -3,7 +3,8 @@
     <main id="album">
         <section class="container">
 
-            <selectMenu :generi="albumGenere"/>
+            <selectMenu :generi="albumGenere"
+            @change="setGenere"/>
 
             <div class="album-grid">
 
@@ -35,7 +36,8 @@ export default {
         return {
             albums: [],
             albumGenere: [],
-        }
+            musicGen: '',
+        };
     },
 
     methods: {
@@ -58,6 +60,10 @@ export default {
                 }
             });
         },
+
+        setGenere: function(genere) {
+            this.musicGen = genere;
+        }
     },
     
     created() {

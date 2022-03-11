@@ -1,12 +1,17 @@
 <template>
 
     <div class="select-menu">
-        <select name="album-type" class="filtro-album" v-model="genSelected">
-          <option :value="genere" v-for="(genere, i) in generi" :key="i">
-              {{ genere }}
-          </option>
-          
+
+        <select name="album-type" class="filtro-album" 
+        v-model="genSelected" 
+        @change="$emit('change', genSelected)">
+            <option value="" selected disabled hidden>Scegli un Genere</option>
+            <option :value="genere" 
+            v-for="(genere, i) in generi" :key="i">
+                {{ genere }}
+            </option>
         </select>
+
     </div>
 
 </template>
