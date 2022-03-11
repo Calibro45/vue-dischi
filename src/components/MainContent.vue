@@ -9,7 +9,7 @@
             <div class="album-grid">
 
                 <albumCard class="album-card"
-                v-for="(album, i) in albums" :key="i" 
+                v-for="(album, i) in albumGenereFilter" :key="i" 
                 :album="album"/>
 
             </div>
@@ -63,6 +63,16 @@ export default {
 
         setGenere: function(genere) {
             this.musicGen = genere;
+        }
+    },
+
+    computed: {
+
+        albumGenereFilter: function() {
+
+            return this.albums.filter(album => {
+                return album.genre.toLowerCase().includes(this.musicGen.toLowerCase());
+            })
         }
     },
     
