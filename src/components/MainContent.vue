@@ -3,8 +3,9 @@
     <main id="album">
         <section class="container">
 
-            <selectMenu :generi="albumGenere"
-            @change="setGenere"/>
+            <selectMenu :generi="albumGenere" :artisti="artisti"
+            @change="setGenere"
+            @artistchange="setArtist"/>
 
             <div class="album-grid">
 
@@ -36,7 +37,9 @@ export default {
         return {
             albums: [],
             albumGenere: [],
+            artisti: [],
             musicGen: '',
+            artista: '',
         };
     },
 
@@ -48,12 +51,14 @@ export default {
                 (console.log(resp.data.response));
                 this.albums = resp.data.response;
                 this.albumType(resp.data.response);
+                this.albumArtist(resp.data.response);
             });
         },
 
         albumType: function(item) {
 
             item.forEach((element) => {
+
                 const genere = element.genre;
                 if(!this.albumGenere.includes(genere)){
                     this.albumGenere.push(genere);
@@ -61,8 +66,24 @@ export default {
             });
         },
 
+        albumArtist: function(artisti) {
+
+            artisti.forEach((element) => {
+
+                const artista = element.author;
+                this.artisti.push(artista);
+
+            })
+        },
+
         setGenere: function(genere) {
+
             this.musicGen = genere;
+        },
+
+        setArtist: function(artista) {
+
+            this.artista = artista;
         }
     },
 
@@ -71,7 +92,8 @@ export default {
         albumGenereFilter: function() {
 
             return this.albums.filter(album => {
-                return album.genre.toLowerCase().includes(this.musicGen.toLowerCase());
+                return album.genre.toLowerCase().includes(this.musicGen.toLowerCase()) && 
+                album.author.toLowerCase().includes(this.artista.toLowerCase());
             })
         }
     },
