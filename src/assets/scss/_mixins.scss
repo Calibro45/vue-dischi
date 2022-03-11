@@ -1,5 +1,14 @@
 @import "./variabili.scss";
 
+@mixin navBar {
+    min-height: 76px;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba($colorsec, 0.7);
+}
+
 @mixin container {
     max-width: 1200px;
     margin: 0 auto;
@@ -23,6 +32,7 @@
     aspect-ratio: 1;
     object-fit: cover;
     object-position: center;
+    width: 100%;
 }
 
 @mixin albumInfo {

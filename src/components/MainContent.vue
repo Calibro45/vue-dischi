@@ -90,12 +90,12 @@ export default {
 
 #album {
     background-color: $color;
-    height: calc(100vh - 76px); 
+    height: 100vh; 
     overflow-x: hidden;
     overflow-y: scroll;
 
     .container {
-        padding: 70px 10px;
+        padding: 150px 10px;
 
         .album-grid {
             display: flex;

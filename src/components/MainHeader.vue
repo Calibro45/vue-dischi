@@ -18,13 +18,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+@import "../assets/scss/mixins.scss";
 @import "../assets/scss/variabili.scss";
 
 header {
-    min-height: 76px;
-    background-color: $colorsec;
-    padding: 10px 20px;
+    @include navBar;
 
     .logo {
         width: 46px;
