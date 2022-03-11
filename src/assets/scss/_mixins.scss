@@ -1,3 +1,5 @@
+@import "./variabili.scss";
+
 @mixin container {
     max-width: 1200px;
     margin: 0 auto;
@@ -27,4 +29,11 @@
     font-size: 14px;
     color: $colorText;
     font-weight: 500;
+}
+
+@mixin selectGenere {
+    padding: 8px 10px;
+    width: 150px;
+    border: 2px solid $colorText;
+    border-radius: 8px;
 }

@@ -3,7 +3,7 @@
     <main id="album">
         <section class="container">
 
-            <selectMenu />
+            <selectMenu :generi="albumGenere"/>
 
             <div class="album-grid">
 

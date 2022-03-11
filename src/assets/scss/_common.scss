@@ -24,6 +24,13 @@ img {
     display: block;
 }
 
+select {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: $colorText;
+}
+
 .container {
     @include container;
 }

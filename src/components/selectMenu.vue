@@ -1,9 +1,11 @@
 <template>
 
     <div class="select-menu">
-        <select name="genere" id="filtro-album">
-          <option value="0">Rock</option>
-          <option value="1">Pop</option>
+        <select name="album-type" class="filtro-album">
+          <option value="0" v-for="(genere, i) in generi" :key="i">
+              {{ genere }}
+          </option>
+          
         </select>
     </div>
 
@@ -13,10 +15,32 @@
 export default {
 
     name: 'selectMenu',
+
+    props: {
+        generi: {
+            type: Array,
+            require: true,
+        }
+    }
     
 }
 </script>
 
 <style lang="scss" scoped>
+
+@import "../assets/scss/mixins.scss";
+
+.select-menu {
+    margin-bottom: 50px;
+    text-align: center;
+
+    .filtro-album {
+        @include selectGenere;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
     
 </style>
