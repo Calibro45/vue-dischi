@@ -1,8 +1,8 @@
 <template>
 
     <div class="select-menu">
-        <select name="album-type" class="filtro-album">
-          <option value="0" v-for="(genere, i) in generi" :key="i">
+        <select name="album-type" class="filtro-album" v-model="genSelected">
+          <option :value="genere" v-for="(genere, i) in generi" :key="i">
               {{ genere }}
           </option>
           
@@ -20,6 +20,12 @@ export default {
         generi: {
             type: Array,
             require: true,
+        }
+    },
+
+    data() {
+        return {
+            genSelected: '',
         }
     }
     
