@@ -34,6 +34,7 @@ export default {
     data() {
         return {
             albums: [],
+            albumGenere: [],
         }
     },
 
@@ -42,17 +43,27 @@ export default {
         albumCall: function() {
             axios.get('https://flynn.boolean.careers/exercises/api/array/music')
             .then(resp => {
-                (console.log(resp.data));
+                (console.log(resp.data.response));
                 this.albums = resp.data.response;
+                this.albumType(resp.data.response);
             });
-        }
+        },
+
+        albumType: function(item) {
+
+            item.forEach((element) => {
+                const genere = element.genre;
+                if(!this.albumGenere.includes(genere)){
+                    this.albumGenere.push(genere);
+                }
+            });
+        },
     },
     
     created() {
 
         this.albumCall();
-        
-    }  
+    },
 }
 
 </script>
